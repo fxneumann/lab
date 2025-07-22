@@ -82,14 +82,15 @@ you to use for any mail client:
     --user1 info@example.com \
     --ssl1 \
 
-If your old mailserver is located at Gmail, you must activate IMAP-Access in the settings over there
-and "less secure app access", too and then use the following *instead* (this will provide the correct
-settings for Google Mails):
+If your old mailserver is located at Gmail, you must first generate an OAuth access token, as login via password is no longer possible. There's a `tutorial for creating a token <https://imapsync.lamiral.info/oauth2/oauth2_imap/README_oauth2.txt>`_ in the imapsync documentation.
+
+After saving the OAuth access token in a file (e.g. gmailtoken.txt) use the following *instead* (this will provide the correct settings for Google Mail):
 
 .. code-block:: ini
 
     --gmail1 \
     --user1 info@example.com \
+    --oauthaccesstoken1 gmailtoken.txt \
 
 Then you need to define the target mailbox on your Uberspace. Keep in mind to replace ``info``
 with the correct mailbox.
